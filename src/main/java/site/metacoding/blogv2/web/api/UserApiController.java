@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import site.metacoding.blogv2.service.UserService;
 import site.metacoding.blogv2.web.api.dto.ResponseDto;
 import site.metacoding.blogv2.web.api.dto.user.JoinDto;
+import site.metacoding.blogv2.web.api.dto.user.LoginDto;
 
 @RequiredArgsConstructor
 @RestController
@@ -24,4 +25,13 @@ public class UserApiController {
 
         return new ResponseDto<String>(1, "회원가입성공", null);
     }
+
+    @PostMapping("/api/login")
+    public ResponseDto<String> login(@RequestBody LoginDto loginDto) {
+
+        userService.로그인(loginDto);
+
+        return new ResponseDto<String>(1, "로그인 성공", null);
+    }
+
 }

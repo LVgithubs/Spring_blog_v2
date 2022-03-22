@@ -12,11 +12,4 @@ public class LoginDto {
     private String username;
     private String password;
 
-    public User toEntity() {
-        User user = new User();
-        user.setUsername(this.username);
-        user.setPassword(this.password);
-        return user;
-    }
-
 }
