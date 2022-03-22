@@ -10,8 +10,8 @@ public class ErrorHandeler {
 
     // 모든 오류를 낚아채는 핸들러
     @ExceptionHandler(value = Exception.class)
-    public void error1() {
-        System.out.println("오류 낚아챔");
+    public ResponseDto<String> error1(RuntimeException e) {
+        return new ResponseDto<String>(-1, "실패", e.getMessage());
     }
 
 }
